@@ -3,18 +3,23 @@ import typ from './types_arr.json';
 
 var stylPrimary = {
     backgroundColor : "red",
-    flex: "1 1 50%"
+    flex: "1 1 50%",
+    width: "50px",
+    height: "50px"
 };
 
 var stylSecondary = {
     backgroundColor : "green",
-    flex: "1 1 50%"
+    flex: "1 1 50%",
+    width: "50px",
+    height: "50px"
 };
 
 var stylName = {
     position : "absolute",
     left : "50%",
-    top : "50%"
+    top : "50%",
+    color: "white"
 }
 
 var stylContainer = {

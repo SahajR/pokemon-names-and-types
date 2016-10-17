@@ -2,7 +2,7 @@ import React from 'react';
 import chai, {expect} from 'chai'
 import jsxChai from 'jsx-chai'
 import {pkmn} from '../names.js';
-import {pkmnTypes} from '../types.js' 
+import {pkmnTypes} from '../types.js'
 import {Badge} from '../Badge.js'
 import TestUtils from 'react-addons-test-utils';
 
@@ -19,7 +19,7 @@ describe('pokemon-names-and-types', () => {
                 });
             }
         });
-        
+
         it('should contain `Bulbasaur`', function() {
             expect(pkmn.all).to.include('Bulbasaur');
         });
@@ -50,28 +50,33 @@ describe('pokemon-names-and-types', () => {
         });
         it('should have Water as a strength', () => {
             expect(pkmnTypes.getSuperEffectiveType("Electric")).to.equal("Water");
-        });        
+        });
         it('should not have any strengths', () => {
             expect(pkmnTypes.getSuperEffectiveType("Normal")).to.equal("None");
         });
     });
 
     describe('badges', () => {
-       
+
     var stylPrimary = {
         backgroundColor : "#A9A878",
-        flex: "1 1 50%"
+        flex: "1 1 50%",
+        width: "50px",
+        height: "50px"
     };
 
     var stylSecondary = {
         backgroundColor : "#7038F9",
-        flex: "1 1 50%"
+        flex: "1 1 50%",
+        width: "50px",
+        height: "50px"
     };
 
     var stylName = {
         position : "absolute",
         left : "50%",
-        top : "50%"
+        top : "50%",
+        color: "white"
     };
 
     var stylContainer = {
@@ -91,6 +96,20 @@ describe('pokemon-names-and-types', () => {
                 </div>
             );
         });
-    });
 
+
+    it('should return a badge with one type', () => {
+          const renderer = TestUtils.createRenderer();
+            renderer.render(<Badge name="Sahaj" type1="Normal"/>);
+            stylSecondary.flex = "0";
+            const actual = renderer.getRenderOutput();
+            const expected = (
+                <div style={stylContainer}>
+                    <div style = {stylPrimary}></div>
+                    <div style = {stylSecondary}></div>
+                    <div style = {stylName}>Sahaj</div>
+                </div>
+            );
+    });
+    });
 });
