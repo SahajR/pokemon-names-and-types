@@ -1,8 +1,12 @@
-import {
-    expect
-} from 'chai';
-import {pkmn, pkmnTypes} from '../../dist/main.js';
-//import {pkmnTypes} from '../types.js' 
+import React from 'react';
+import chai, {expect} from 'chai'
+import jsxChai from 'jsx-chai'
+import {pkmn} from '../names.js';
+import {pkmnTypes} from '../types.js' 
+import {Badge} from '../Badge.js'
+import TestUtils from 'react-addons-test-utils';
+
+chai.use(jsxChai);
 
 describe('pokemon-names-and-types', () => {
     describe('all', () => {
@@ -49,6 +53,43 @@ describe('pokemon-names-and-types', () => {
         });        
         it('should not have any strengths', () => {
             expect(pkmnTypes.getSuperEffectiveType("Normal")).to.equal("None");
+        });
+    });
+
+    describe('badges', () => {
+       
+    var stylPrimary = {
+        backgroundColor : "#A9A878",
+        flex: "1 1 50%"
+    };
+
+    var stylSecondary = {
+        backgroundColor : "#7038F9",
+        flex: "1 1 50%"
+    };
+
+    var stylName = {
+        position : "absolute",
+        left : "50%",
+        top : "50%"
+    };
+
+    var stylContainer = {
+        display : "flex",
+        position: "relative"
+    };
+
+    it('should return a badge', () => {
+            const renderer = TestUtils.createRenderer();
+            renderer.render(<Badge name="Sahaj" type1="Normal" type2="Dragon"/>);
+            const actual = renderer.getRenderOutput();
+            const expected = (
+                <div style={stylContainer}>
+                    <div style = {stylPrimary}></div>
+                    <div style = {stylSecondary}></div>
+                    <div style = {stylName}>Sahaj</div>
+                </div>
+            );
         });
     });
 
