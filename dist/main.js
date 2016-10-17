@@ -7,15 +7,9 @@ exports.pkmn = undefined;
 
 var _uniqueRandomArray = require('unique-random-array');
 
-var _uniqueRandomArray2 = _interopRequireDefault(_uniqueRandomArray);
-
 var _pokemon = require('./pokemon.json');
 
-var _pokemon2 = _interopRequireDefault(_pokemon);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getRandomItem = (0, _uniqueRandomArray2.default)(_pokemon2.default);
+var getRandomItem = (0, _uniqueRandomArray)(_pokemon);
 var random = function random(number) {
   if (number === undefined) {
     return getRandomItem();
@@ -28,10 +22,10 @@ var random = function random(number) {
   }
 };
 
-var all = _pokemon2.default;
+var all = _pokemon;
 
 var pkmn = {
-  all: _pokemon2.default,
+  all: _pokemon,
   random: random
 };
 
@@ -45,24 +39,20 @@ exports.pkmnTypes = undefined;
 
 var _types_arr = require("./types_arr.json");
 
-var _types_arr2 = _interopRequireDefault(_types_arr);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 var isWeak = function isWeak(def, att) {
-    return _types_arr2.default.find(function (o) {
+    return _types_arr.find(function (o) {
         return o.name == def;
     }).weaknesses.includes(att);
 };
 
 var isStrong = function isStrong(def, att) {
-    return _types_arr2.default.find(function (o) {
+    return _types_arr.find(function (o) {
         return o.name == def;
     }).strengths.includes(att);
 };
 
 var getSuperEffectiveType = function getSuperEffectiveType(t) {
-    return _types_arr2.default.find(function (o) {
+    return _types_arr.find(function (o) {
         return o.name == t;
     }).strengths[0] || "None";
 };

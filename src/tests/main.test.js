@@ -1,8 +1,8 @@
 import {
     expect
 } from 'chai';
-import {pkmn} from '../names.js';
-import {pkmnTypes} from '../types.js' 
+import {pkmn, pkmnTypes} from '../../dist/main.js';
+//import {pkmnTypes} from '../types.js' 
 
 describe('pokemon-names-and-types', () => {
     describe('all', () => {

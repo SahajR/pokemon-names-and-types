@@ -70,11 +70,10 @@
     "exclude": [
       "**/*.test.js",
       "build",
-      "node_modules",
-      "*.json"
+      "node_modules"
     ],
     "include": [
-      "src/*.js"
+      "dist/*.js"
     ]
   }
 }
