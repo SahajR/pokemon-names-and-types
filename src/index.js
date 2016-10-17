@@ -2,8 +2,8 @@ import uniqueRandomArray from 'unique-random-array';
 import pokemon from './pokemon.json'
 
 var getRandomItem = uniqueRandomArray(pokemon);
-
-export const random = (number) => {
+var pkmn = {};
+const random = (number) => {
   if (number === undefined) {
     return getRandomItem();
   } else {
@@ -15,4 +15,9 @@ export const random = (number) => {
   }
 }
 
-export const all = pokemon;
+const all = pokemon;
+
+export default pkmn = {
+  all: pokemon,
+  random: random
+};
