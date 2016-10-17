@@ -1,7 +1,8 @@
 import {
     expect
 } from 'chai';
-import p from '../index.js';
+import p from '../names.js';
+import ty from '../types.js' 
 
 describe('pokemon-names-and-types', () => {
     describe('all', () => {
@@ -35,4 +36,20 @@ describe('pokemon-names-and-types', () => {
         });
 
     });
+
+    describe('types', () => {
+        it('should be weak to Water', () => {
+            expect(ty.isWeak("Fire", "Water")).to.equal(true);
+        });
+        it('should be Strong against to Water', () => {
+            expect(ty.isStrong("Electric", "Water")).to.equal(true);
+        });
+        it('should have Water as a strength', () => {
+            expect(ty.getSuperEffectiveType("Electric")).to.equal("Water");
+        });        
+        it('should not have any strengths', () => {
+            expect(ty.getSuperEffectiveType("Normal")).to.equal("None");
+        });
+    });
+
 });
