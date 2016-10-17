@@ -1,4 +1,4 @@
-import pTypes from './types.json';
+import pTypes from './types_arr.json';
 
 var Types = {};
 
@@ -8,7 +8,7 @@ const isStrong = (def, att) => (pTypes.find((o) => (o.name == def)).strengths.in
 
 const getSuperEffectiveType = (t) => pTypes.find((o) => (o.name == t)).strengths[0] || "None"; 
 
-export default Types = {
+export default Types = {    
     isWeak,
     isStrong,
     getSuperEffectiveType

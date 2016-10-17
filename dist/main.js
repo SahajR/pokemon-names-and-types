@@ -40,34 +40,34 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _types = require("./types.json");
+var _types_arr = require("./types_arr.json");
 
-var _types2 = _interopRequireDefault(_types);
+var _types_arr2 = _interopRequireDefault(_types_arr);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Types = {};
-
-var isWeak = function isWeak(def, att) {
-    return _types2.default.find(function (name) {
-        return name == def;
-    }).weaknesses.includes(att);
-};
-
-var isStrong = function isStrong(def, att) {
-    return _types2.default.find(function (name) {
-        return name == def;
-    }).strengths.includes(att);
-};
-
-var getSuperEffectiveType = function getSuperEffectiveType(t) {
-    return _types2.default.find(function (name) {
-        return name == def;
-    }).strengths[0] || "None";
-};
-
-exports.default = Types = {
+var Types = {
     isWeak: isWeak,
     isStrong: isStrong,
     getSuperEffectiveType: getSuperEffectiveType
 };
+
+var isWeak = function isWeak(def, att) {
+    return _types_arr2.default.find(function (o) {
+        return o.name == def;
+    }).weaknesses.includes(att);
+};
+
+var isStrong = function isStrong(def, att) {
+    return _types_arr2.default.find(function (o) {
+        return o.name == def;
+    }).strengths.includes(att);
+};
+
+var getSuperEffectiveType = function getSuperEffectiveType(t) {
+    return _types_arr2.default.find(function (o) {
+        return o.name == t;
+    }).strengths[0] || "None";
+};
+
+exports.default = Types;
