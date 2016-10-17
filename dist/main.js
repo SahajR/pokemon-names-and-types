@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.pkmn = undefined;
 
 var _uniqueRandomArray = require('unique-random-array');
 
@@ -15,7 +16,6 @@ var _pokemon2 = _interopRequireDefault(_pokemon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var getRandomItem = (0, _uniqueRandomArray2.default)(_pokemon2.default);
-var pkmn = {};
 var random = function random(number) {
   if (number === undefined) {
     return getRandomItem();
@@ -30,27 +30,24 @@ var random = function random(number) {
 
 var all = _pokemon2.default;
 
-exports.default = pkmn = {
+var pkmn = {
   all: _pokemon2.default,
   random: random
 };
+
+exports.pkmn = pkmn;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.pkmnTypes = undefined;
 
 var _types_arr = require("./types_arr.json");
 
 var _types_arr2 = _interopRequireDefault(_types_arr);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Types = {
-    isWeak: isWeak,
-    isStrong: isStrong,
-    getSuperEffectiveType: getSuperEffectiveType
-};
 
 var isWeak = function isWeak(def, att) {
     return _types_arr2.default.find(function (o) {
@@ -70,4 +67,10 @@ var getSuperEffectiveType = function getSuperEffectiveType(t) {
     }).strengths[0] || "None";
 };
 
-exports.default = Types;
+var pkmnTypes = {
+    isWeak: isWeak,
+    isStrong: isStrong,
+    getSuperEffectiveType: getSuperEffectiveType
+};
+
+exports.pkmnTypes = pkmnTypes;

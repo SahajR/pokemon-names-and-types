@@ -2,7 +2,7 @@
   "name": "pokemon-names-and-types",
   "version": "1.2.0",
   "description": "An API for pokemon names and types",
-  "main": "dist/names.js",
+  "main": "dist/main.js",
   "scripts": {
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "cover": "nyc --reporter=lcov npm t",
