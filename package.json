@@ -1,13 +1,14 @@
 {
   "name": "pokemon-names-and-types",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An API for pokemon names and types",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha src/tests/*.test.js --compilers js:babel-core/register",
     "prebuild": "rimraf dist && mkdir dist",
     "build": "babel src/index.js -o dist/index.js",
-    "postbuild": "cp src/*.json dist"
+    "postbuild": "cp src/*.json dist",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,8 @@
     "ghooks": "1.3.2",
     "jsx-chai": "4.0.0",
     "mocha": "3.1.2",
-    "rimraf": "2.5.4"
+    "rimraf": "2.5.4",
+    "semantic-release": "4.3.5"
   },
   "babel": {
     "presets": [
