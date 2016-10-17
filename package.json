@@ -1,6 +1,6 @@
 {
   "name": "pokemon-names-and-types",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An API for pokemon names and types",
   "main": "dist/names.js",
   "scripts": {
