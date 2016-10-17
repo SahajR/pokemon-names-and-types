@@ -6,3 +6,4 @@
 [![MIT License](https://img.shields.io/npm/l/pokemon-names-and-types.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 --
 A open source project created as practice for the egghead.io course - https://egghead.io/courses/how-to-write-an-open-source-javascript-library
+![Pokemon](http://imgh.us/pkmn.png)
