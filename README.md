@@ -1,6 +1,6 @@
 # pokemon-names-and-types
 [![travis build](https://img.shields.io/travis/SahajR/pokemon-names-and-types.svg?style=flat-square)](https://travis-ci.org/SahajR/pokemon-names-and-types)
-[![codecov](https://codecov.io/gh/SahajR/pokemon-names-and-types/branch/master/graph/badge.svg)](https://codecov.io/gh/SahajR/pokemon-names-and-types)
+[![codecov](https://codecov.io/gh/SahajR/pokemon-names-and-types/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/SahajR/pokemon-names-and-types)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 [![version](https://img.shields.io/npm/v/pokemon-names-and-types.svg?style=flat-square)](http://npm.im/pokemon-names-and-types)
 [![MIT License](https://img.shields.io/npm/l/pokemon-names-and-types.svg?style=flat-square)](http://opensource.org/licenses/MIT)
