@@ -1,6 +1,6 @@
 import React from 'react';
 import typ from './types_arr.json';
-require('array.prototype.find');
+import findInArray from 'array-find'
 
 var stylPrimary = {
     backgroundColor : "red",
@@ -30,9 +30,9 @@ var stylContainer = {
 
 const getBadgeContent = (name, type1, type2) => {
 
-    if(type1) stylPrimary.backgroundColor = typ.find((n) => (n.name == type1)).color;
+    if(type1) stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name == type1)).color;
 
-    if(type2) stylSecondary.backgroundColor = typ.find((n) => (n.name == type2)).color;
+    if(type2) stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name == type2)).color;
     else stylSecondary.flex = "0";
 
     return (

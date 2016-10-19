@@ -13,9 +13,11 @@ var _types_arr = require('./types_arr.json');
 
 var _types_arr2 = _interopRequireDefault(_types_arr);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _arrayFind = require('array-find');
 
-require('array.prototype.find');
+var _arrayFind2 = _interopRequireDefault(_arrayFind);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var stylPrimary = {
     backgroundColor: "red",
@@ -45,11 +47,11 @@ var stylContainer = {
 
 var getBadgeContent = function getBadgeContent(name, type1, type2) {
 
-    if (type1) stylPrimary.backgroundColor = _types_arr2.default.find(function (n) {
+    if (type1) stylPrimary.backgroundColor = (0, _arrayFind2.default)(_types_arr2.default, function (n) {
         return n.name == type1;
     }).color;
 
-    if (type2) stylSecondary.backgroundColor = _types_arr2.default.find(function (n) {
+    if (type2) stylSecondary.backgroundColor = (0, _arrayFind2.default)(_types_arr2.default, function (n) {
         return n.name == type2;
     }).color;else stylSecondary.flex = "0";
 
@@ -126,33 +128,30 @@ var _types_arr = require('./types_arr.json');
 
 var _types_arr2 = _interopRequireDefault(_types_arr);
 
+var _arrayFind = require('array-find');
+
+var _arrayFind2 = _interopRequireDefault(_arrayFind);
+
 var _arrayIncludes = require('array-includes');
 
 var _arrayIncludes2 = _interopRequireDefault(_arrayIncludes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-require('array.prototype.find');
-
-
-(0, _arrayIncludes2.default)(_types_arr2.default.find(function (o) {
-    return o.name == def;
-}).weaknesses, att);
-
 var isWeak = function isWeak(def, att) {
-    return (0, _arrayIncludes2.default)(_types_arr2.default.find(function (o) {
+    return (0, _arrayIncludes2.default)((0, _arrayFind2.default)(_types_arr2.default, function (o) {
         return o.name == def;
     }).weaknesses, att);
 };
 
 var isStrong = function isStrong(def, att) {
-    return (0, _arrayIncludes2.default)(_types_arr2.default.find(function (o) {
+    return (0, _arrayIncludes2.default)((0, _arrayFind2.default)(_types_arr2.default, function (o) {
         return o.name == def;
     }).strengths, att);
 };
 
 var getSuperEffectiveType = function getSuperEffectiveType(t) {
-    return _types_arr2.default.find(function (o) {
+    return (0, _arrayFind2.default)(_types_arr2.default, function (o) {
         return o.name == t;
     }).strengths[0] || "None";
 };
