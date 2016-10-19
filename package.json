@@ -40,6 +40,7 @@
     "babel-preset-react": "6.16.0",
     "babel-preset-stage-2": "6.17.0",
     "babel-register": "6.16.3",
+    "babel-runtime-es2015-instance-methods": "0.1.2",
     "chai": "3.5.0",
     "codecov": "1.0.1",
     "cz-conventional-changelog": "1.2.0",
@@ -57,7 +58,8 @@
       "es2015",
       "stage-2",
       "react"
-    ]
+    ],
+    "plugins" : ["babel-runtime-es2015-instance-methods"]
   },
   "config": {
     "commitizen": {

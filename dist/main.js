@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Badge = undefined;
 
+var _callInstanceMethod2 = require('babel-runtime-es2015-instance-methods/call-instance-method');
+
+var _callInstanceMethod3 = _interopRequireDefault(_callInstanceMethod2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -17,18 +21,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var stylPrimary = {
     backgroundColor: "red",
-    flex: "1 1 50%"
+    flex: "1 1 50%",
+    width: "50px",
+    height: "50px"
 };
 
 var stylSecondary = {
     backgroundColor: "green",
-    flex: "1 1 50%"
+    flex: "1 1 50%",
+    width: "50px",
+    height: "50px"
 };
 
 var stylName = {
     position: "absolute",
     left: "50%",
-    top: "50%"
+    top: "50%",
+    color: "white"
 };
 
 var stylContainer = {
@@ -38,19 +47,19 @@ var stylContainer = {
 
 var getBadgeContent = function getBadgeContent(name, type1, type2) {
 
-    if (type1) stylPrimary.backgroundColor = _types_arr2.default.find(function (n) {
+    if (type1) stylPrimary.backgroundColor = (0, _callInstanceMethod3.default)(_types_arr2.default, 'find', [function (n) {
         return n.name == type1;
-    }).color;
+    }]).color;
 
-    if (type2) stylSecondary.backgroundColor = _types_arr2.default.find(function (n) {
+    if (type2) stylSecondary.backgroundColor = (0, _callInstanceMethod3.default)(_types_arr2.default, 'find', [function (n) {
         return n.name == type2;
-    }).color;else stylSecondary.flex = "0";
+    }]).color;else stylSecondary.flex = "0";
 
     return _react2.default.createElement(
         'div',
         { style: stylContainer },
-        _react2.default.createElement('div', { style: styl.stylPrimary }),
-        _react2.default.createElement('div', { style: styl.stylSecondary }),
+        _react2.default.createElement('div', { style: stylPrimary }),
+        _react2.default.createElement('div', { style: stylSecondary }),
         _react2.default.createElement(
             'div',
             { style: stylName },
@@ -115,6 +124,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.pkmnTypes = undefined;
 
+var _callInstanceMethod2 = require("babel-runtime-es2015-instance-methods/call-instance-method");
+
+var _callInstanceMethod3 = _interopRequireDefault(_callInstanceMethod2);
+
 var _types_arr = require("./types_arr.json");
 
 var _types_arr2 = _interopRequireDefault(_types_arr);
@@ -122,21 +135,21 @@ var _types_arr2 = _interopRequireDefault(_types_arr);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var isWeak = function isWeak(def, att) {
-    return _types_arr2.default.find(function (o) {
+    return (0, _callInstanceMethod3.default)((0, _callInstanceMethod3.default)(_types_arr2.default, "find", [function (o) {
         return o.name == def;
-    }).weaknesses.includes(att);
+    }]).weaknesses, "includes", [att]);
 };
 
 var isStrong = function isStrong(def, att) {
-    return _types_arr2.default.find(function (o) {
+    return (0, _callInstanceMethod3.default)((0, _callInstanceMethod3.default)(_types_arr2.default, "find", [function (o) {
         return o.name == def;
-    }).strengths.includes(att);
+    }]).strengths, "includes", [att]);
 };
 
 var getSuperEffectiveType = function getSuperEffectiveType(t) {
-    return _types_arr2.default.find(function (o) {
+    return (0, _callInstanceMethod3.default)(_types_arr2.default, "find", [function (o) {
         return o.name == t;
-    }).strengths[0] || "None";
+    }]).strengths[0] || "None";
 };
 
 var pkmnTypes = {
