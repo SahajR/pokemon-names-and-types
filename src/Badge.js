@@ -1,5 +1,6 @@
 import React from 'react';
 import typ from './types_arr.json';
+require('array.prototype.find');
 
 var stylPrimary = {
     backgroundColor : "red",

@@ -30,6 +30,8 @@
   },
   "homepage": "https://github.com/SahajR/pokemon-names-and-types#readme",
   "dependencies": {
+    "array-includes": "3.0.2",
+    "array.prototype.find": "2.0.0",
     "react": "15.3.2",
     "unique-random-array": "1.0.0"
   },
@@ -40,7 +42,6 @@
     "babel-preset-react": "6.16.0",
     "babel-preset-stage-2": "6.17.0",
     "babel-register": "6.16.3",
-    "babel-runtime-es2015-instance-methods": "0.1.2",
     "chai": "3.5.0",
     "codecov": "1.0.1",
     "cz-conventional-changelog": "1.2.0",
@@ -58,8 +59,7 @@
       "es2015",
       "stage-2",
       "react"
-    ],
-    "plugins" : ["babel-runtime-es2015-instance-methods"]
+    ]
   },
   "config": {
     "commitizen": {

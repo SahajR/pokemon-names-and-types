@@ -5,10 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Badge = undefined;
 
-var _callInstanceMethod2 = require('babel-runtime-es2015-instance-methods/call-instance-method');
-
-var _callInstanceMethod3 = _interopRequireDefault(_callInstanceMethod2);
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -18,6 +14,8 @@ var _types_arr = require('./types_arr.json');
 var _types_arr2 = _interopRequireDefault(_types_arr);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+require('array.prototype.find');
 
 var stylPrimary = {
     backgroundColor: "red",
@@ -47,13 +45,13 @@ var stylContainer = {
 
 var getBadgeContent = function getBadgeContent(name, type1, type2) {
 
-    if (type1) stylPrimary.backgroundColor = (0, _callInstanceMethod3.default)(_types_arr2.default, 'find', [function (n) {
+    if (type1) stylPrimary.backgroundColor = _types_arr2.default.find(function (n) {
         return n.name == type1;
-    }]).color;
+    }).color;
 
-    if (type2) stylSecondary.backgroundColor = (0, _callInstanceMethod3.default)(_types_arr2.default, 'find', [function (n) {
+    if (type2) stylSecondary.backgroundColor = _types_arr2.default.find(function (n) {
         return n.name == type2;
-    }]).color;else stylSecondary.flex = "0";
+    }).color;else stylSecondary.flex = "0";
 
     return _react2.default.createElement(
         'div',
@@ -117,39 +115,46 @@ var pkmn = {
 };
 
 exports.pkmn = pkmn;
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.pkmnTypes = undefined;
 
-var _callInstanceMethod2 = require("babel-runtime-es2015-instance-methods/call-instance-method");
-
-var _callInstanceMethod3 = _interopRequireDefault(_callInstanceMethod2);
-
-var _types_arr = require("./types_arr.json");
+var _types_arr = require('./types_arr.json');
 
 var _types_arr2 = _interopRequireDefault(_types_arr);
 
+var _arrayIncludes = require('array-includes');
+
+var _arrayIncludes2 = _interopRequireDefault(_arrayIncludes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+require('array.prototype.find');
+
+
+(0, _arrayIncludes2.default)(_types_arr2.default.find(function (o) {
+    return o.name == def;
+}).weaknesses, att);
+
 var isWeak = function isWeak(def, att) {
-    return (0, _callInstanceMethod3.default)((0, _callInstanceMethod3.default)(_types_arr2.default, "find", [function (o) {
+    return (0, _arrayIncludes2.default)(_types_arr2.default.find(function (o) {
         return o.name == def;
-    }]).weaknesses, "includes", [att]);
+    }).weaknesses, att);
 };
 
 var isStrong = function isStrong(def, att) {
-    return (0, _callInstanceMethod3.default)((0, _callInstanceMethod3.default)(_types_arr2.default, "find", [function (o) {
+    return (0, _arrayIncludes2.default)(_types_arr2.default.find(function (o) {
         return o.name == def;
-    }]).strengths, "includes", [att]);
+    }).strengths, att);
 };
 
 var getSuperEffectiveType = function getSuperEffectiveType(t) {
-    return (0, _callInstanceMethod3.default)(_types_arr2.default, "find", [function (o) {
+    return _types_arr2.default.find(function (o) {
         return o.name == t;
-    }]).strengths[0] || "None";
+    }).strengths[0] || "None";
 };
 
 var pkmnTypes = {
