@@ -9,10 +9,15 @@
 A open source project created as practice for the egghead.io course - https://egghead.io/courses/how-to-write-an-open-source-javascript-library
 ![Pokemon](http://imgh.us/pkmn.png)
 ## Pokemon Names ##
+**Get a all Pokemon names**
+```javascript
+import {pkmn} from 'pokemon-names-and-types'
+pkmn.all //Returns all pokemon names as a json array
+```
 **Get a random Pokemon name**
 ```javascript
 import {pkmn} from 'pokemon-names-and-types'
-pkmn.all //Returns a random pokemon
+pkmn.random() //Returns a random pokemon
 ```
 **Get  *n* Pokemon names**
 ```javascript
