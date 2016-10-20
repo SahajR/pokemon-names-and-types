@@ -2,9 +2,14 @@ import pTypes from './types_arr.json';
 import findInArray from 'array-find';
 import includes from 'array-includes';
 
-const isWeak = (def, att) => (includes(findInArray(pTypes, (o) => (o.name == def)).weaknesses, att));
+const chk = (def, att, type) => {
+  var typ = findInArray(pTypes, (o) => (o.name == def));
+  return typ ? (type == "STRENGTH" ? includes(typ.strengths, att) : includes(typ.weaknesses, att)) : false;
+};
 
-const isStrong = (def, att) => (includes(findInArray(pTypes, (o) => (o.name == def)).strengths, att));
+const isWeak = (def = "Water", att = "Ghost") => (chk(def, att, "WEAKNESS"));
+
+const isStrong = (def = "Water", att = "Ghost") => (chk(def, att, "STRENGTH"));
 
 const getSuperEffectiveType = (t) => findInArray(pTypes, (o) => (o.name == t)).strengths[0] || "None";
 

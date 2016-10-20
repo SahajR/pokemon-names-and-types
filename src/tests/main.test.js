@@ -54,6 +54,14 @@ describe('pokemon-names-and-types', () => {
         it('should not have any strengths', () => {
             expect(pkmnTypes.getSuperEffectiveType("Normal")).to.equal("None");
         });
+        it('should not have any strengths/weaknesses if wrong types are passed in', () => {
+            expect(pkmnTypes.isStrong("lmao", "rofl")).to.equal(false);
+            expect(pkmnTypes.isWeak("lmao", "rofl")).to.equal(false);
+            expect(pkmnTypes.isStrong("lmao")).to.equal(false);
+            expect(pkmnTypes.isWeak("lmao")).to.equal(false);
+            expect(pkmnTypes.isStrong()).to.equal(false);
+            expect(pkmnTypes.isWeak()).to.equal(false);
+        });
     });
 
     describe('badges', () => {
