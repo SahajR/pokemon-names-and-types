@@ -103,6 +103,7 @@ describe('pokemon-names-and-types', () => {
                     <div style = {stylName}>Sahaj</div>
                 </div>
             );
+            expect(expected).to.deep.equal(actual);
         });
 
 
@@ -118,6 +119,7 @@ describe('pokemon-names-and-types', () => {
                     <div style = {stylName}>Sahaj</div>
                 </div>
             );
+            expect(expected).to.deep.equal(actual);
     });
     });
 });
