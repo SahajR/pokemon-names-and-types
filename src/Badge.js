@@ -30,9 +30,9 @@ var stylContainer = {
 
 const getBadgeContent = (name, type1, type2) => {
 
-    stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name == type1)).color;
+    stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name == type1.toLowerCase())).color;
 
-    if(type2) stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name == type2)).color;
+    if(type2) stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name == type2.toLowerCase())).color;
     else stylSecondary.flex = "0";
 
     return (

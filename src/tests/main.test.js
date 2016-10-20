@@ -49,10 +49,10 @@ describe('pokemon-names-and-types', () => {
             expect(pkmnTypes.isStrong("Electric", "Water")).to.equal(true);
         });
         it('should have Water as a strength', () => {
-            expect(pkmnTypes.getSuperEffectiveType("Electric")).to.equal("Water");
+            expect(pkmnTypes.getSuperEffectiveType("Electric")).to.equal("water");
         });
         it('should not have any strengths', () => {
-            expect(pkmnTypes.getSuperEffectiveType("Normal")).to.equal("None");
+            expect(pkmnTypes.getSuperEffectiveType("Normal")).to.equal("none");
         });
         it('should not have any strengths/weaknesses if wrong types are passed in', () => {
             expect(pkmnTypes.isStrong("lmao", "rofl")).to.equal(false);

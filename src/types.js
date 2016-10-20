@@ -7,11 +7,11 @@ const chk = (def, att, type) => {
   return typ ? (type == "STRENGTH" ? includes(typ.strengths, att) : includes(typ.weaknesses, att)) : false;
 };
 
-const isWeak = (def = "Water", att = "Ghost") => (chk(def, att, "WEAKNESS"));
+const isWeak = (def = "Water", att = "Ghost") => (chk(def.toLowerCase(), att.toLowerCase(), "WEAKNESS"));
 
-const isStrong = (def = "Water", att = "Ghost") => (chk(def, att, "STRENGTH"));
+const isStrong = (def = "Water", att = "Ghost") => (chk(def.toLowerCase(), att.toLowerCase(), "STRENGTH"));
 
-const getSuperEffectiveType = (t) => findInArray(pTypes, (o) => (o.name == t)).strengths[0] || "None";
+const getSuperEffectiveType = (t) => findInArray(pTypes, (o) => (o.name == t.toLowerCase())).strengths[0] || "none";
 
 var pkmnTypes = {
     isWeak,
