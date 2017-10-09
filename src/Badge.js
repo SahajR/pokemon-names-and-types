@@ -1,39 +1,38 @@
-import React from 'react';
-import typ from './types_arr.json';
-import findInArray from 'array-find'
+import React from "react";
+import typ from "./types_arr.json";
+import findInArray from "array-find";
 
-var stylPrimary = {
+const stylPrimary = {
     backgroundColor : "red",
     flex: "1 1 50%",
     width: "50px",
     height: "50px"
 };
 
-var stylSecondary = {
+const stylSecondary = {
     backgroundColor : "green",
     flex: "1 1 50%",
     width: "50px",
     height: "50px"
 };
 
-var stylName = {
+const stylName = {
     position : "absolute",
     left : "50%",
     top : "50%",
     color: "white"
-}
+};
 
-var stylContainer = {
+const stylContainer = {
     display : "flex",
     position: "relative"
-}
+};
 
 const getBadgeContent = (name, type1, type2) => {
 
-    stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name == type1.toLowerCase())).color;
-
-    if(type2) stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name == type2.toLowerCase())).color;
-    else stylSecondary.flex = "0";
+    stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name === type1.toLowerCase())).color;
+    type2 ? stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name === type2.toLowerCase())).color
+          : stylSecondary.flex = "0";
 
     return (
         <div style={stylContainer}>

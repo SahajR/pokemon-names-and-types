@@ -1,60 +1,56 @@
-import React from 'react';
-import chai, {expect} from 'chai'
-import jsxChai from 'jsx-chai'
-import {pkmn} from '../names.js';
-import {pkmnTypes} from '../types.js'
-import {Badge} from '../Badge.js'
-import TestUtils from 'react-addons-test-utils';
+import React from "react";
+import chai, {expect} from "chai";
+import jsxChai from "jsx-chai"
+import {pkmn} from "../names.js";
+import {pkmnTypes} from "../types.js"
+import {Badge} from "../Badge.js"
+import TestUtils from "react-addons-test-utils";
 
 chai.use(jsxChai);
 
-describe('pokemon-names-and-types', () => {
-    describe('all', () => {
-        it('should be an array of strings', () => {
-            expect(pkmn.all).to.satisfy(isArrayOfStrings);
+const isArrayOfStrings = (array) => array.every((item) => typeof item === "string");
 
-            function isArrayOfStrings(array) {
-                return array.every(function(item) {
-                    return typeof item === 'string';
-                });
-            }
+describe("pokemon-names-and-types", () => {
+    describe("all", () => {
+        it("should be an array of strings", () => {
+            expect(pkmn.all).to.satisfy(isArrayOfStrings);
         });
 
-        it('should contain `Bulbasaur`', function() {
-            expect(pkmn.all).to.include('Bulbasaur');
+        it("should contain `Bulbasaur`", () => {
+            expect(pkmn.all).to.include("Bulbasaur");
         });
     });
 
-    describe('random', function() {
-        it('should return a random item from the list', function() {
-            var randomItem = pkmn.random();
+    describe("random", () => {
+        it("should return a random item from the list", () => {
+            const randomItem = pkmn.random();
             expect(pkmn.all).to.include(randomItem);
         });
 
-        it('should return an array of random items if passed a number', function() {
-            var randomItems = pkmn.random(3);
+        it("should return an array of random items if passed a number", () => {
+            const randomItems = pkmn.random(3);
             expect(randomItems).to.have.length(3);
-            randomItems.forEach(function(item) {
+            randomItems.forEach((item) => {
                 expect(pkmn.all).to.include(item);
             });
         });
 
     });
 
-    describe('types', () => {
-        it('should be weak to Water', () => {
+    describe("types", () => {
+        it("should be weak to Water", () => {
             expect(pkmnTypes.isWeak("Fire", "Water")).to.equal(true);
         });
-        it('should be Strong against Water', () => {
+        it("should be Strong against Water", () => {
             expect(pkmnTypes.isStrong("Electric", "Water")).to.equal(true);
         });
-        it('should have Water as a strength', () => {
+        it("should have Water as a strength", () => {
             expect(pkmnTypes.getSuperEffectiveType("Electric")).to.equal("water");
         });
-        it('should not have any strengths', () => {
+        it("should not have any strengths", () => {
             expect(pkmnTypes.getSuperEffectiveType("Normal")).to.equal("none");
         });
-        it('should not have any strengths/weaknesses if wrong types are passed in', () => {
+        it("should not have any strengths/weaknesses if wrong types are passed in", () => {
             expect(pkmnTypes.isStrong("lmao", "rofl")).to.equal(false);
             expect(pkmnTypes.isWeak("lmao", "rofl")).to.equal(false);
             expect(pkmnTypes.isStrong("lmao")).to.equal(false);
@@ -64,62 +60,62 @@ describe('pokemon-names-and-types', () => {
         });
     });
 
-    describe('badges', () => {
+    describe("badges", () => {
 
-    var stylPrimary = {
-        backgroundColor : "#A9A878",
-        flex: "1 1 50%",
-        width: "50px",
-        height: "50px"
-    };
+        const stylPrimary = {
+            backgroundColor : "#A9A878",
+            flex: "1 1 50%",
+            width: "50px",
+            height: "50px"
+        };
 
-    var stylSecondary = {
-        backgroundColor : "#7038F9",
-        flex: "1 1 50%",
-        width: "50px",
-        height: "50px"
-    };
+        const stylSecondary = {
+            backgroundColor : "#7038F9",
+            flex: "1 1 50%",
+            width: "50px",
+            height: "50px"
+        };
 
-    var stylName = {
-        position : "absolute",
-        left : "50%",
-        top : "50%",
-        color: "white"
-    };
+        const stylName = {
+            position : "absolute",
+            left : "50%",
+            top : "50%",
+            color: "white"
+        };
 
-    var stylContainer = {
-        display : "flex",
-        position: "relative"
-    };
+        const stylContainer = {
+            display : "flex",
+            position: "relative"
+        };
 
-    it('should return a badge', () => {
-            const renderer = TestUtils.createRenderer();
-            renderer.render(<Badge name="Sahaj" type1="Normal" type2="Dragon"/>);
-            const actual = renderer.getRenderOutput();
-            const expected = (
-                <div style={stylContainer}>
-                    <div style = {stylPrimary}></div>
-                    <div style = {stylSecondary}></div>
-                    <div style = {stylName}>Sahaj</div>
-                </div>
-            );
-            expect(expected).to.deep.equal(actual);
+        it("should return a badge", () => {
+                const renderer = TestUtils.createRenderer();
+                renderer.render(<Badge name="Sahaj" type1="Normal" type2="Dragon"/>);
+                const actual = renderer.getRenderOutput();
+                const expected = (
+                    <div style={stylContainer}>
+                        <div style = {stylPrimary}></div>
+                        <div style = {stylSecondary}></div>
+                        <div style = {stylName}>Sahaj</div>
+                    </div>
+                );
+                expect(expected).to.deep.equal(actual);
+            });
+
+
+        it("should return a badge with one type", () => {
+              const renderer = TestUtils.createRenderer();
+                renderer.render(<Badge name="Sahaj" type1="Normal"/>);
+                stylSecondary.flex = "0";
+                const actual = renderer.getRenderOutput();
+                const expected = (
+                    <div style={stylContainer}>
+                        <div style = {stylPrimary}></div>
+                        <div style = {stylSecondary}></div>
+                        <div style = {stylName}>Sahaj</div>
+                    </div>
+                );
+                expect(expected).to.deep.equal(actual);
         });
-
-
-    it('should return a badge with one type', () => {
-          const renderer = TestUtils.createRenderer();
-            renderer.render(<Badge name="Sahaj" type1="Normal"/>);
-            stylSecondary.flex = "0";
-            const actual = renderer.getRenderOutput();
-            const expected = (
-                <div style={stylContainer}>
-                    <div style = {stylPrimary}></div>
-                    <div style = {stylSecondary}></div>
-                    <div style = {stylName}>Sahaj</div>
-                </div>
-            );
-            expect(expected).to.deep.equal(actual);
-    });
     });
 });
