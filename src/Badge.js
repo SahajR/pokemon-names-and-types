@@ -31,7 +31,7 @@ const getBadgeContent = (name, type1, type2) => {
     stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name === type1.toLowerCase())).color;
 
     if(type2) {
-        stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name === type2.toLowerCase())).color
+        stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name === type2.toLowerCase())).color;
     }
 
     return (
