@@ -70,10 +70,8 @@ describe("pokemon-names-and-types", () => {
         };
 
         const stylSecondary = {
-            backgroundColor : "#7038F9",
-            flex: "1 1 50%",
-            width: "50px",
-            height: "50px"
+            ...stylPrimary,
+            backgroundColor : "#7038F9"
         };
 
         const stylName = {
@@ -94,8 +92,8 @@ describe("pokemon-names-and-types", () => {
                 const actual = renderer.getRenderOutput();
                 const expected = (
                     <div style={stylContainer}>
-                        <div style = {stylPrimary}></div>
-                        <div style = {stylSecondary}></div>
+                        <div style = {stylPrimary}/>
+                        <div style = {stylSecondary}/>
                         <div style = {stylName}>Sahaj</div>
                     </div>
                 );
@@ -106,12 +104,10 @@ describe("pokemon-names-and-types", () => {
         it("should return a badge with one type", () => {
               const renderer = TestUtils.createRenderer();
                 renderer.render(<Badge name="Sahaj" type1="Normal"/>);
-                stylSecondary.flex = "0";
                 const actual = renderer.getRenderOutput();
                 const expected = (
                     <div style={stylContainer}>
-                        <div style = {stylPrimary}></div>
-                        <div style = {stylSecondary}></div>
+                        <div style = {stylPrimary}/>
                         <div style = {stylName}>Sahaj</div>
                     </div>
                 );

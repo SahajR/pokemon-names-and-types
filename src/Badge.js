@@ -10,10 +10,8 @@ const stylPrimary = {
 };
 
 const stylSecondary = {
-    backgroundColor : "green",
-    flex: "1 1 50%",
-    width: "50px",
-    height: "50px"
+    ...stylPrimary,
+    backgroundColor : "green"
 };
 
 const stylName = {
@@ -31,13 +29,15 @@ const stylContainer = {
 const getBadgeContent = (name, type1, type2) => {
 
     stylPrimary.backgroundColor = findInArray(typ, (n) => (n.name === type1.toLowerCase())).color;
-    type2 ? stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name === type2.toLowerCase())).color
-          : stylSecondary.flex = "0";
+
+    if(type2) {
+        stylSecondary.backgroundColor = findInArray(typ, (n) => (n.name === type2.toLowerCase())).color
+    }
 
     return (
         <div style={stylContainer}>
-            <div style = {stylPrimary}></div>
-            <div style = {stylSecondary}></div>
+            <div style = {stylPrimary}/>
+            type2 && <div style = {stylSecondary}/>
             <div style = {stylName}>{name}</div>
         </div>
     );
