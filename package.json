@@ -34,6 +34,7 @@
     "array-find": "1.0.0",
     "array-includes": "3.0.3",
     "react": "16.0.0",
+    "react-dom": "^16.0.0",
     "unique-random-array": "1.0.0"
   },
   "devDependencies": {
@@ -51,7 +52,6 @@
     "jsx-chai": "4.0.0",
     "mocha": "4.0.1",
     "nyc": "11.2.1",
-    "react-addons-test-utils": "15.6.2",
     "rimraf": "2.6.2",
     "semantic-release": "8.1.2"
   },
