@@ -1,4 +1,5 @@
 # pokemon-names-and-types
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/500ebaa93ed7411c8be080a0f170e099)](https://www.codacy.com/app/SahajR/pokemon-names-and-types?utm_source=github.com&utm_medium=referral&utm_content=SahajR/pokemon-names-and-types&utm_campaign=badger)
 [![travis build](https://img.shields.io/travis/SahajR/pokemon-names-and-types.svg?style=flat-square)](https://travis-ci.org/SahajR/pokemon-names-and-types)
 [![codecov](https://codecov.io/gh/SahajR/pokemon-names-and-types/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/SahajR/pokemon-names-and-types)
 [![downloads](https://img.shields.io/npm/dm/pokemon-names-and-types.svg?style=flat-square)](http://npm-stat.com/charts.html?package=pokemon-names-and-types&from=2016-10-06)
