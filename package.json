@@ -12,7 +12,8 @@
     "postbuild": "cp src/*.json dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "validate": "npm run cover && npm run check-coverage",
-    "report-coverage": "cat ./coverage/lcov.info | codecov"
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "pre-commit": "npm run test"
   },
   "repository": {
     "type": "git",
