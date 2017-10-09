@@ -37,7 +37,7 @@ const getBadgeContent = (name, type1, type2) => {
     return (
         <div style={stylContainer}>
             <div style = {stylPrimary}/>
-            type2 && <div style = {stylSecondary}/>
+            {type2 && <div style = {stylSecondary}/>}
             <div style = {stylName}>{name}</div>
         </div>
     );
