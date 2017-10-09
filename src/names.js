@@ -3,7 +3,7 @@ import pokemon from "./pokemon.json";
 
 const getRandomItem = uniqueRandomArray(pokemon);
 const random = (number) => {
-  if (number === undefined) {
+  if (!number) {
     return getRandomItem();
   } else {
     const randomItems = [];

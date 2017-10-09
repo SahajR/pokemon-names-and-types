@@ -1,9 +1,9 @@
 import React from "react";
 import chai, {expect} from "chai";
-import jsxChai from "jsx-chai"
+import jsxChai from "jsx-chai";
 import {pkmn} from "../names.js";
-import {pkmnTypes} from "../types.js"
-import {Badge} from "../Badge.js"
+import {pkmnTypes} from "../types.js";
+import {Badge} from "../Badge.js";
 import TestUtils from "react-addons-test-utils";
 
 chai.use(jsxChai);
