@@ -8,41 +8,41 @@
 [![MIT License](https://img.shields.io/npm/l/pokemon-names-and-types.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 --
 An open source project created as practice for the egghead.io course - https://egghead.io/courses/how-to-write-an-open-source-javascript-library
-![Pokemon](https://srstatic.nyc3.digitaloceanspaces.com/pkmn.png)
+![Pokemon](assets/logo.png)
 ## Pokemon Names ##
 **Get a all Pokemon names**
 ```javascript
 import {pkmn} from 'pokemon-names-and-types'
-pkmn.all //Returns all pokemon names as a json array
+pkmn.all // Returns all pokemon names as a json array
 ```
 **Get a random Pokemon name**
 ```javascript
 import {pkmn} from 'pokemon-names-and-types'
-pkmn.random() //Returns a random pokemon
+pkmn.random() // Returns a random pokemon
 ```
 **Get  *n* Pokemon names**
 ```javascript
 import {pkmn} from 'pokemon-names-and-types'
-pkmn.random(n) //Returns n random pokemon
+pkmn.random(n) // Returns n random pokemon
 ```
 ----------
 ## Pokemon Types ##
 **Get type to which another is weak to**
 ```javascript
 import {pkmnTypes} from 'pokemon-names-and-types'
-pkmnTypes.getSuperEffectiveType("Steel") //Ice
+pkmnTypes.getSuperEffectiveType("Steel") // Ice
 ```
 **Check if a type is strong/weak against another**
 ```javascript
 import {pkmnTypes} from 'pokemon-names-and-types'
-pkmnTypes.isWeak("Normal","Rock") //True
-pkmnTypes.isStrong("Water","Ghost") //False
+pkmnTypes.isWeak("Normal","Rock") // True
+pkmnTypes.isStrong("Water","Ghost") // False
 ```
 ---
 ## React Pokemon Badge component ##
 **Get a badge with name and specified types**
 ```javascript
-import {Badge} from 'pokemon-names-and-types' 
+import {Badge} from 'pokemon-names-and-types'
 //Returns a badge with types indicated by color:
 <Badge name="SomePokemon" type1="Fire" type2="Grass"/>
 ```
