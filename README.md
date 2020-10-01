@@ -1,4 +1,4 @@
-# pokemon-names-and-types
+# pokemon-names-and-types 
 [![travis build](https://img.shields.io/travis/SahajR/pokemon-names-and-types.svg?style=flat-square)](https://travis-ci.org/SahajR/pokemon-names-and-types)
 [![codecov](https://codecov.io/gh/SahajR/pokemon-names-and-types/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/SahajR/pokemon-names-and-types)
 [![downloads](https://img.shields.io/npm/dm/pokemon-names-and-types.svg?style=flat-square)](http://npm-stat.com/charts.html?package=pokemon-names-and-types&from=2016-10-06)
